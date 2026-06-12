@@ -1,31 +1,13 @@
-Here's the updated `README.md` with Windows CMD installation instructions added:
-
-```markdown
 # 🔐 FRP Bypass Toolkit — Android 10–16
 
-A comprehensive, modular bash script for **authorized** penetration testing of Factory Reset Protection (FRP) on Android devices. Covers Android 10 through Android 16 with version-specific bypass techniques, retry logic, detailed logging, and safety checks.
+A comprehensive, modular bash script for **authorized** penetration testing of Factory Reset Protection (FRP) on Android devices. Covers Android 10 through Android 16 with version-specific bypass techniques.
 
 > **⚠ IMPORTANT — This tool is for AUTHORIZED security testing only.**  
 > Unauthorized use may violate computer fraud laws. You must own the device or have explicit written permission before running this tool.
 
 ## 📖 Description
 
-The **FRP Bypass Toolkit** is a modular, production-grade bash script designed for authorized security professionals conducting Android device penetration testing. It supports Android versions 10 through 16 with version-specific exploits: for Android 10-11 it uses Google Account setup activity injection, settings secure table manipulation, and hidden test activities; for Android 12-13 it leverages TalkBack accessibility service automation, fragment-based activity manager injection, and setup wizard process killing with device provisioned overrides; for Android 14-16 it implements advanced recovery-mode ADB enablement, Samsung Download/Odin mode FRP partition reset commands, and Fastboot erase operations against frp/config/persist partitions. The script automatically detects device state (ADB, Fastboot, or Recovery mode), extracts build properties to identify the exact Android version and manufacturer, and selects the optimal bypass strategy. Safety is paramount — the tool includes Samsung Knox trip warnings, destructive operation confirmations, and graceful interrupt handling. Additional features include configurable retry logic with per-command timeouts, comprehensive timestamped audit logging, color-coded terminal progress indicators, an interactive ADB shell drop-in mode, and a diagnostics module that reports bootloader state, provisioning status, and installed FRP-related packages. Created by ENG-251885 for the security research community. Intended for authorized testing only — unauthorized use may violate applicable laws.
-
-📎 **Repository:** https://github.com/brhanumehari/FRP_bypass
-
-## 🧩 Features
-
-# 🔐 FRP Bypass Toolkit — Android 10–16
-
-A comprehensive, modular bash script for **authorized** penetration testing of Factory Reset Protection (FRP) on Android devices. Covers Android 10 through Android 16 with version-specific bypass techniques, retry logic, detailed logging, and safety checks.
-
-> **⚠ IMPORTANT — This tool is for AUTHORIZED security testing only.**  
-> Unauthorized use may violate computer fraud laws. You must own the device or have explicit written permission before running this tool.
-
-## 📖 Description
-
-The **FRP Bypass Toolkit** is a modular, production-grade bash script designed for authorized security professionals conducting Android device penetration testing. It supports Android versions 10 through 16 with version-specific exploits: for Android 10-11 it uses Google Account setup activity injection, settings secure table manipulation, and hidden test activities; for Android 12-13 it leverages TalkBack accessibility service automation, fragment-based activity manager injection, and setup wizard process killing with device provisioned overrides; for Android 14-16 it implements advanced recovery-mode ADB enablement, Samsung Download/Odin mode FRP partition reset commands, and Fastboot erase operations against frp/config/persist partitions. The script automatically detects device state (ADB, Fastboot, or Recovery mode), extracts build properties to identify the exact Android version and manufacturer, and selects the optimal bypass strategy. Safety is paramount — the tool includes Samsung Knox trip warnings, destructive operation confirmations, and graceful interrupt handling. Additional features include configurable retry logic with per-command timeouts, comprehensive timestamped audit logging, color-coded terminal progress indicators, an interactive ADB shell drop-in mode, and a diagnostics module that reports bootloader state, provisioning status, and installed FRP-related packages. Created by ENG-251885 for the security research community. Intended for authorized testing only — unauthorized use may violate applicable laws.
+The **FRP Bypass Toolkit** is a modular, production-grade bash script designed for authorized security professionals conducting Android device penetration testing. It supports Android versions 10 through 16 with version-specific bypass techniques.
 
 📎 **Repository:** https://github.com/brhanumehari/FRP_bypass
 
@@ -63,12 +45,12 @@ git clone https://github.com/brhanumehari/FRP_bypass.git
 cd FRP_bypass
 
 # 2. Make the script executable
-chmod +x frp_bypass.sh
+chmod +x bash/frp-remover.sh
 
 # 3. Connect your Android device via USB (USB Debugging enabled)
 
 # 4. Run auto-detect and bypass
-./frp_bypass.sh
+bash bash/frp-remover.sh
 ```
 
 ### Windows (CMD)
@@ -81,14 +63,14 @@ git clone https://github.com/brhanumehari/FRP_bypass.git
 cd FRP_bypass
 
 # 3. Make the script executable
-chmod +x frp_bypass.sh
+chmod +x bash/frp-remover.sh
 
 # 4. Download and extract Platform Tools from:
 #    https://developer.android.com/studio/releases/platform-tools
 #    Add the platform-tools folder to your PATH
 
 # 5. Run the script
-./frp_bypass.sh
+bash bash/frp-remover.sh
 ```
 
 #### Option B: Using Windows Subsystem for Linux (WSL)
@@ -109,10 +91,10 @@ git clone https://github.com/brhanumehari/FRP_bypass.git
 cd FRP_bypass
 
 REM 7. Make script executable
-chmod +x frp_bypass.sh
+chmod +x bash/frp-remover.sh
 
 REM 8. Run
-./frp_bypass.sh
+bash bash/frp-remover.sh
 ```
 
 #### Option C: Using CMD with PowerShell (Bash not available)
@@ -135,8 +117,8 @@ REM 6. Extract the ZIP to C:\FRP_bypass
 
 REM 7. Open Git Bash and run:
 cd /c/FRP_bypass
-chmod +x frp_bypass.sh
-./frp_bypass.sh
+chmod +x bash/frp-remover.sh
+bash bash/frp-remover.sh
 ```
 
 ### Termux (Android)
@@ -157,17 +139,17 @@ git clone https://github.com/brhanumehari/FRP_bypass.git
 cd FRP_bypass
 
 # 6. Make the script executable
-chmod +x frp_bypass.sh
+chmod +x bash/frp-remover.sh
 
 # 7. Run it
-./frp_bypass.sh
+bash bash/frp-remover.sh
 ```
 
 ## 🔧 Usage
 
 ```
 USAGE:
-  ./frp_bypass.sh [OPTIONS]
+  bash bash/frp-remover.sh [OPTIONS]
 
 OPTIONS:
   -a, --auto         Auto-detect device and run bypass (default)
@@ -181,11 +163,11 @@ OPTIONS:
   -h, --help         Show this help message
 
 EXAMPLES:
-  ./frp_bypass.sh                      # Auto-detect and attempt bypass
-  ./frp_bypass.sh -v                   # Auto-detect with verbose logging
-  ./frp_bypass.sh -d                   # Device diagnostics only
-  ./frp_bypass.sh -m                   # Manual version selection
-  ./frp_bypass.sh -r -f               # Recovery mode bypass, skip safety
+  bash bash/frp-remover.sh                 # Auto-detect and attempt bypass
+  bash bash/frp-remover.sh -v              # Auto-detect with verbose logging
+  bash bash/frp-remover.sh -d              # Device diagnostics only
+  bash bash/frp-remover.sh -m              # Manual version selection
+  bash bash/frp-remover.sh -r -f          # Recovery mode bypass, skip safety
 ```
 
 ## 🧪 Compatible Devices
@@ -223,7 +205,7 @@ EXAMPLES:
 
 All actions are timestamped and saved to:
 ```
-frp_bypass_YYYYMMDD_HHMMSS.log
+logs/frp_remover_YYYYMMDD_HHMMSS.log
 ```
 
 The log captures every command, result, timeout, and error for post-assessment review.
@@ -246,9 +228,9 @@ The script prompts for confirmation before any destructive operation unless `-f`
 
 ## 🧑‍💻 Author
 
-**Created by ENG-251885***
+**Created by brhanumehari**
 
-- Repository:https://github.com/brhanumehari/FRP_bypass
+- Repository: https://github.com/brhanumehari/FRP_bypass
 - Security Research & Penetration Testing Tools
 
 ## 📜 License
@@ -266,16 +248,3 @@ You may not use this software for illegal activities. The author assumes no liab
 ## ⭐ Support
 
 If this tool helped your assessment, please star the repository and cite it in your security reports.
-```
-
-## Key Additions for Windows:
-
-1. **📋 Prerequisites section** now includes Windows tools (Platform Tools, Git Bash, WSL)
-2. **🚀 Quick Start** now has three Windows methods:
-   - **Option A**: Git Bash (most compatible with bash scripts)
-   - **Option B**: WSL (full Linux environment on Windows)
-   - **Option C**: CMD + PowerShell (for users without Git Bash)
-3. **Termux** section added separately for Android phone users
-4. **Repository URL** updated to `https://github.com/brhanumehari/FRP_bypass`
-
-The Windows CMD method uses Git Bash (which comes with Git for Windows) to run the bash script, since CMD natively cannot execute `.sh` files. WSL is the most robust option for Windows users.
