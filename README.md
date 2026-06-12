@@ -16,6 +16,21 @@ The **FRP Bypass Toolkit** is a modular, production-grade bash script designed f
 
 ## 🧩 Features
 
+# 🔐 FRP Bypass Toolkit — Android 10–16
+
+A comprehensive, modular bash script for **authorized** penetration testing of Factory Reset Protection (FRP) on Android devices. Covers Android 10 through Android 16 with version-specific bypass techniques, retry logic, detailed logging, and safety checks.
+
+> **⚠ IMPORTANT — This tool is for AUTHORIZED security testing only.**  
+> Unauthorized use may violate computer fraud laws. You must own the device or have explicit written permission before running this tool.
+
+## 📖 Description
+
+The **FRP Bypass Toolkit** is a modular, production-grade bash script designed for authorized security professionals conducting Android device penetration testing. It supports Android versions 10 through 16 with version-specific exploits: for Android 10-11 it uses Google Account setup activity injection, settings secure table manipulation, and hidden test activities; for Android 12-13 it leverages TalkBack accessibility service automation, fragment-based activity manager injection, and setup wizard process killing with device provisioned overrides; for Android 14-16 it implements advanced recovery-mode ADB enablement, Samsung Download/Odin mode FRP partition reset commands, and Fastboot erase operations against frp/config/persist partitions. The script automatically detects device state (ADB, Fastboot, or Recovery mode), extracts build properties to identify the exact Android version and manufacturer, and selects the optimal bypass strategy. Safety is paramount — the tool includes Samsung Knox trip warnings, destructive operation confirmations, and graceful interrupt handling. Additional features include configurable retry logic with per-command timeouts, comprehensive timestamped audit logging, color-coded terminal progress indicators, an interactive ADB shell drop-in mode, and a diagnostics module that reports bootloader state, provisioning status, and installed FRP-related packages. Created by ENG-251885 for the security research community. Intended for authorized testing only — unauthorized use may violate applicable laws.
+
+📎 **Repository:** https://github.com/brhanumehari/FRP_bypass
+
+## 🧩 Features
+
 | Layer | Technique |
 |-------|-----------|
 | **Android 10–11** | Account setup activity injection, `settings secure` manipulation, hidden test activities, WebView/browser exploitation |
@@ -23,27 +38,17 @@ The **FRP Bypass Toolkit** is a modular, production-grade bash script designed f
 | **Android 14–16** | Recovery-mode ADB enablement, Samsung Odin/DM FRP partition reset, Fastboot `erase frp/config`, managed provisioning abuse |
 | **All versions** | Retry logic, timeouts, safety prompts, color-coded output, full audit logging, interactive ADB shell |
 
-## 📋 Prerequisites
+## 📋 Prerequisites by Platform
 
-### Linux (Debian/Ubuntu/Kali)
-| **Tool** |** Install** |
-|------|---------|
-| *`adb`* | `*sudo apt install adb`* |
-| `*fastboot`* | `sudo apt install fastboot`* |
+| Platform | Required Tools | Installation Command |
+|----------|----------------|----------------------|
+| **Linux (Debian/Ubuntu/Kali)** | `adb`, `fastboot`, `git` | `sudo apt update && sudo apt install adb fastboot git -y` |
+| **Termux (Android)** | `git`, `android-tools` | `pkg update && pkg install git android-tools -y && termux-setup-storage` |
+| **Windows (Git Bash)** | Git Bash, Platform Tools | Download from [git-scm.com](https://git-scm.com/download/win) and [Platform Tools](https://developer.android.com/studio/releases/platform-tools) |
+| **Windows (WSL)** | WSL, `adb`, `fastboot`, `git` | `wsl --install` then `sudo apt install adb fastboot git -y` |
+| **Windows (CMD + PowerShell)** | Git for Windows, Platform Tools | Download from [git-scm.com](https://git-scm.com/download/win) and [Platform Tools](https://developer.android.com/studio/releases/platform-tools) |
 
-### Termux (Android)
-| Tool | Install |
-|------|---------|
-| `git` | `pkg install git` |
-| `android-tools` | `pkg install android-tools` |
-
-### Windows (CMD/PowerShell)
-| Tool | Download |
-|------|----------|
-| `adb` & `fastboot` | [Platform Tools](https://developer.android.com/studio/releases/platform-tools) |
-| `Git Bash` or `WSL` | [Git for Windows](https://git-scm.com/download/win) or `wsl --install` |
-
-### Verify installation
+### Verify Installation
 ```bash
 adb version
 fastboot --version
