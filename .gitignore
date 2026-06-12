@@ -1,0 +1,98 @@
+# .gitignore for FRP Remover
+
+# Build artifacts
+target/
+dist/
+build/
+*.o
+*.a
+*.so
+*.dylib
+
+# Rust
+Cargo.lock
+**/*.rs.bk
+rust/target/
+
+# Logs
+logs/
+*.log
+frp_remover_*.log
+
+# Compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+# ADB files
+.adb/
+
+# Device data
+*.apk
+*.zip
+*.tar.gz
+
+# Temporary files
+temp/
+tmp/
+*.bak
+*.backup
+
+# Node modules (if used)
+node_modules/
+npm-debug.log
+
+# Python
+venv/
+env/
+.venv/
+
+# Sensitive files
+*.key
+*.pem
+*.cert
+secrets.conf
+
+# Cache
+.cache/
+cache/
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+
+# User-specific
+config.user.conf
+local_settings.py
+
+# Build directories
+out/
+obj/
+
+# Binary releases (add only source)
+releases/
+*.exe
+*.msi
+
+# Editor backups
+*.sublime-project
+*.sublime-workspace
+*.kate-swp
