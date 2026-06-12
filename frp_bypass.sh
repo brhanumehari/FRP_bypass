@@ -509,7 +509,7 @@ frp_android_10_11() {
 frp_android_12_13() {
     log "STEP" "Applying Android 12/13 FRP bypass techniques..."
     echo -e "${MAGENTA}══════════════════════════════════════════════════${NC}"
-    echo -e "${MAGENTA}  Android 12/13 Bypass Operations${NC}"
+    echo -e "${MAGENTA}  Android 12/13 Bypass Operations by:ENG-251885 ${NC}"
     echo -e "${MAGENTA}══════════════════════════════════════════════════${NC}"
     
     # ── Technique 1: TalkBack Accessibility Sequence ──
@@ -599,7 +599,7 @@ frp_android_12_13() {
 frp_android_14_16() {
     log "STEP" "Applying Android 14-16 FRP bypass techniques..."
     echo -e "${MAGENTA}══════════════════════════════════════════════════${NC}"
-    echo -e "${MAGENTA}  Android 14-16 Advanced Bypass Operations${NC}"
+    echo -e "${MAGENTA}  Android 14-16 Advanced Bypass Operations by:ENG-251885 ${NC}"
     echo -e "${MAGENTA}══════════════════════════════════════════════════${NC}"
     
     # ── Technique 1: Recovery Mode ADB ──
@@ -824,8 +824,8 @@ show_diagnostics() {
     log "STEP" "Running device diagnostics..."
     
     echo -e "\n${BOLD}${WHITE}╔══════════════════════════════════════════════════╗${NC}"
-    echo -e "${BOLD}${WHITE}║           DEVICE DIAGNOSTICS REPORT              ║${NC}"
-    echo -e "${BOLD}${WHITE}╚══════════════════════════════════════════════════╝${NC}"
+    echo -e "${BOLD}${WHITE}║           DEVICE DIAGNOSTICS REPORT    by:ENG-251885       ║${NC}"
+    echo -e "${BOLD}${WHITE}╚═════════════════════════════════════════════════╝${NC}"
     
     if [[ -n "${SELECTED_ADB}" ]]; then
         echo -e "\n${CYAN}[ADB Device Info]${NC}"
@@ -872,7 +872,7 @@ show_help() {
     cat << 'EOF'
 ╔══════════════════════════════════════════════════════════════════╗
 ║              FRP BYPASS TOOLKIT — AUTHORIZED USE ONLY           ║
-║                    Android 10-16 Support                         ║
+║                    Android 10-16 Support  by:ENG -251885                ║
 ╚══════════════════════════════════════════════════════════════════╝
 EOF
     echo -e "${NC}"
@@ -967,7 +967,8 @@ main() {
     echo "╔══════════════════════════════════════════════════════╗"
     echo "║     🔐  FRP BYPASS TOOLKIT v1.0                     ║"
     echo "║     Authorized Security Testing Tool                ║"
-    echo "║     Android 10-16 Compatible                        ║"
+    echo "║     Android 10-16 Compatible  
+    ║    "    by:ENG -251885
     echo "╚══════════════════════════════════════════════════════╝"
     echo -e "${NC}"
     
