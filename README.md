@@ -15,12 +15,12 @@ A comprehensive Factory Reset Protection (FRP) removal toolkit for Android 10 th
 ## 📁 Project Structure
 
 ```
-FRP_bypass/
+FRP_remover/
 ├── README.md                 # Main documentation
 ├── LICENSE                   # MIT License with legal disclaimer
 ├── .gitignore               # Git ignore configuration
 ├── docs/                    # Detailed guides
-│   ├── SETUP.md            # Installation guide
+│   ��── SETUP.md            # Installation guide
 │   ├── USAGE.md            # Usage instructions
 │   ├── SUPPORTED_DEVICES.md # Device compatibility
 │   └── TROUBLESHOOTING.md  # Troubleshooting guide
@@ -66,8 +66,8 @@ FRP_bypass/
 
 1. **Clone Repository**
 ```bash
-git clone https://github.com/brhanumehari/FRP_bypass.git
-cd FRP_bypass
+git clone https://github.com/brhanumehari/FRP_remover.git
+cd FRP_remover
 ```
 
 2. **Run Installer**
@@ -174,4 +174,5 @@ Built with consideration for security, performance, and user experience.
 
 ---
 
+**Repository**: https://github.com/brhanumehari/FRP_remover  
 **Version**: 1.0.0 | **Last Updated**: 2026-06-12 | **Author**: brhanumehari
