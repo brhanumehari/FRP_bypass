@@ -1,0 +1,30 @@
+[package]
+name = "frp-remover"
+version = "1.0.0"
+edition = "2021"
+authors = ["brhanumehari"]
+description = "Factory Reset Protection remover for Android 10-16"
+repository = "https://github.com/brhanumehari/FRP_bypass"
+license = "MIT"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+tokio = { version = "1.35", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+regex = "1.10"
+lazy_static = "1.4"
+colored = "2.1"
+
+[[bin]]
+name = "frp-remover"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
