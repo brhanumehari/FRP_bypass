@@ -1,4 +1,4 @@
-Here's the updated `README.md` with your repository URL inserted:
+Here's the updated `README.md` with Windows CMD installation instructions added:
 
 ```markdown
 # 🔐 FRP Bypass Toolkit — Android 10–16
@@ -25,11 +25,23 @@ The **FRP Bypass Toolkit** is a modular, production-grade bash script designed f
 
 ## 📋 Prerequisites
 
-| Tool | Install (Debian/Ubuntu/Kali) |
-|------|------------------------------|
-| `adb` | `sudo apt install adb` |
-| `fastboot` | `sudo apt install fastboot` |
-| `grep`, `awk`, `sed`, `cut`, `tr` | (usually pre-installed) |
+### Linux (Debian/Ubuntu/Kali)
+| **Tool** |** Install** |
+|------|---------|
+| *`adb`* | `*sudo apt install adb`* |
+| `*fastboot`* | `sudo apt install fastboot`* |
+
+### Termux (Android)
+| Tool | Install |
+|------|---------|
+| `git` | `pkg install git` |
+| `android-tools` | `pkg install android-tools` |
+
+### Windows (CMD/PowerShell)
+| Tool | Download |
+|------|----------|
+| `adb` & `fastboot` | [Platform Tools](https://developer.android.com/studio/releases/platform-tools) |
+| `Git Bash` or `WSL` | [Git for Windows](https://git-scm.com/download/win) or `wsl --install` |
 
 ### Verify installation
 ```bash
@@ -39,6 +51,7 @@ fastboot --version
 
 ## 🚀 Quick Start
 
+### Linux / macOS
 ```bash
 # 1. Clone the repository
 git clone https://github.com/brhanumehari/FRP_bypass.git
@@ -50,6 +63,98 @@ chmod +x frp_bypass.sh
 # 3. Connect your Android device via USB (USB Debugging enabled)
 
 # 4. Run auto-detect and bypass
+./frp_bypass.sh
+```
+
+### Windows (CMD)
+
+#### Option A: Using Git Bash (Recommended)
+```bash
+# 1. Open Git Bash (installed with Git for Windows)
+# 2. Clone the repository
+git clone https://github.com/brhanumehari/FRP_bypass.git
+cd FRP_bypass
+
+# 3. Make the script executable
+chmod +x frp_bypass.sh
+
+# 4. Download and extract Platform Tools from:
+#    https://developer.android.com/studio/releases/platform-tools
+#    Add the platform-tools folder to your PATH
+
+# 5. Run the script
+./frp_bypass.sh
+```
+
+#### Option B: Using Windows Subsystem for Linux (WSL)
+```cmd
+REM 1. Open CMD as Administrator
+REM 2. Install WSL
+wsl --install
+
+REM 3. Open Ubuntu/WSL terminal
+REM 4. Update packages
+sudo apt update && sudo apt upgrade -y
+
+REM 5. Install prerequisites
+sudo apt install adb fastboot git -y
+
+REM 6. Clone the repository
+git clone https://github.com/brhanumehari/FRP_bypass.git
+cd FRP_bypass
+
+REM 7. Make script executable
+chmod +x frp_bypass.sh
+
+REM 8. Run
+./frp_bypass.sh
+```
+
+#### Option C: Using CMD with PowerShell (Bash not available)
+```cmd
+REM 1. Download Platform Tools from:
+REM    https://developer.android.com/studio/releases/platform-tools
+
+REM 2. Extract to C:\platform-tools
+
+REM 3. Add to PATH (CMD as Administrator)
+setx PATH "%PATH%;C:\platform-tools" /M
+
+REM 4. Download Git for Windows from:
+REM    https://git-scm.com/download/win
+
+REM 5. Clone the repo using Git Bash or download ZIP:
+REM    https://github.com/brhanumehari/FRP_bypass/archive/refs/heads/main.zip
+
+REM 6. Extract the ZIP to C:\FRP_bypass
+
+REM 7. Open Git Bash and run:
+cd /c/FRP_bypass
+chmod +x frp_bypass.sh
+./frp_bypass.sh
+```
+
+### Termux (Android)
+```bash
+# 1. Update Termux packages
+pkg update && pkg upgrade -y
+
+# 2. Install git and android-tools
+pkg install git android-tools -y
+
+# 3. Give Termux storage access
+termux-setup-storage
+
+# 4. Clone your repository
+git clone https://github.com/brhanumehari/FRP_bypass.git
+
+# 5. Navigate into the folder
+cd FRP_bypass
+
+# 6. Make the script executable
+chmod +x frp_bypass.sh
+
+# 7. Run it
 ./frp_bypass.sh
 ```
 
@@ -136,10 +241,9 @@ The script prompts for confirmation before any destructive operation unless `-f`
 
 ## 🧑‍💻 Author
 
-**Created by ENG-251885**
+**Created by ENG-251885***
 
-- GitHub: [@ENG-251885](https://github.com/ENG-251885)
-- Repository: [https://github.com/brhanumehari/FRP_bypass](https://github.com/brhanumehari/FRP_bypass)
+- Repository:https://github.com/brhanumehari/FRP_bypass
 - Security Research & Penetration Testing Tools
 
 ## 📜 License
@@ -159,8 +263,14 @@ You may not use this software for illegal activities. The author assumes no liab
 If this tool helped your assessment, please star the repository and cite it in your security reports.
 ```
 
-The updates include:
-1. **Repository link** added under the Description section
-2. **Clone URL** updated to `https://github.com/brhanumehari/FRP_bypass.git` in Quick Start
-3. **Authorization Statement** section added confirming you have permission
-4. **Author section** updated with both profile and repository links
+## Key Additions for Windows:
+
+1. **📋 Prerequisites section** now includes Windows tools (Platform Tools, Git Bash, WSL)
+2. **🚀 Quick Start** now has three Windows methods:
+   - **Option A**: Git Bash (most compatible with bash scripts)
+   - **Option B**: WSL (full Linux environment on Windows)
+   - **Option C**: CMD + PowerShell (for users without Git Bash)
+3. **Termux** section added separately for Android phone users
+4. **Repository URL** updated to `https://github.com/brhanumehari/FRP_bypass`
+
+The Windows CMD method uses Git Bash (which comes with Git for Windows) to run the bash script, since CMD natively cannot execute `.sh` files. WSL is the most robust option for Windows users.
